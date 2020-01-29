@@ -16,7 +16,7 @@
 
         </form>
         <br/>
-        <a href="${pageContext.request.contextPath}/logout">На головну</a>
+        <a href="${pageContext.request.contextPath}/coffee/logout">На головну</a>
 
 </body>
 </html>

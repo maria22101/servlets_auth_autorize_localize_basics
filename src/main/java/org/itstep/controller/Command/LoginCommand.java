@@ -26,11 +26,12 @@ public class LoginCommand implements Command{
 
         if(simpleUserService.userExists(name, pass) &&
                 simpleUserService.getRoleByLoginAndPassword(name, pass).equals(User.ROLE.USER)) {
-            return "/WEB-INF/user/userbasis.jsp";
+//            return "/WEB-INF/user/userbasis.jsp";
+            return "redirect:/user/userbasis.jsp";
 
         }else if(simpleUserService.userExists(name, pass) &&
                 simpleUserService.getRoleByLoginAndPassword(name, pass).equals(User.ROLE.ADMIN)) {
-            return "/WEB-INF/admin/adminbasis.jsp";
+            return "redirect:/admin/adminbasis.jsp";
 
         }else {
             return "/login.jsp";

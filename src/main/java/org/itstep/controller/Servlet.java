@@ -23,6 +23,8 @@ public class Servlet extends HttpServlet {
         commands.put("logout", new LogOutCommand());
         commands.put("login", new LoginCommand());
         commands.put("exception" , new ExceptionCommand());
+        commands.put("user/userbasis.jsp", new UserMainCommand());
+        commands.put("admin/adminbasis.jsp", new AdminMainCommand());
     }
 
     public void doGet(HttpServletRequest request,
@@ -48,7 +50,7 @@ public class Servlet extends HttpServlet {
 
         //for check
         if(page.contains("redirect:")){
-            response.sendRedirect(page.replace("redirect:", "/api"));
+            response.sendRedirect(page.replace("redirect:", "/coffee"));
         }else {
             request.getRequestDispatcher(page).forward(request, response);
         }
